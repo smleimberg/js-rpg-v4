@@ -1,0 +1,270 @@
+/***************
+ ** MAP TILES **
+ ***************/
+
+/* EMPTY TILE */
+.map .column.blank{
+  background-color: #000;
+}
+
+/****************
+ * TILE OBJECTS *
+ ****************/
+
+ /* PORTALS */
+.map .portal{
+    position: absolute;
+    display: inline-block;
+}
+.map .portal.portal-up{
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: rgba(255,255,255,0.5);
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.3)), color-stop(100%, rgba(255,255,255,0)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+}
+.map .portal.hole{
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+/* CHEST */
+.map .chest{
+  display: inline-block;
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  height: 1em;
+  width: 0.8em;
+  transition: all 0.5s ease-in-out;
+}
+.map .chest .face{
+  background-color: rgba(0,0,0,0.2);
+}
+.map .chest .lid{
+  background-color: gold;
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+  width: 0.7em;
+  border: 0.05em solid saddlebrown;
+  height: 0.3em;
+  border-top: none;
+}
+.map .chest .lid .face{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+}
+.map .chest .lid .lock{
+  position: absolute;
+  bottom: -50%;
+  left: 0.25em;
+  height: 0.1em;
+  width: 0.1em;
+  border: 0.05em solid saddlebrown;
+  text-align: center;
+  background-color: gold;
+}
+.map .chest .body{
+  background-color: gold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0.7em;
+  border: 0.05em solid saddlebrown;
+  height: 0.3em;
+  background-color: gold;
+}
+.map .chest .body .face{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.map .chest.is-open .lid{
+  top: 0.15em;
+  height: 0.2em;
+}
+.map .chest.is-open .lid .face{
+  height: 0;
+}
+.map .chest.is-open .lid .hole{
+  position: absolute;
+  background-color: #000;
+  left: -0.05em;
+  top: 0.25em;
+  height: 0.2em;
+  width: 100%;
+  border-left: 0.05em solid saddlebrown;
+  border-right: 0.05em solid saddlebrown;
+}
+
+/* DOORS */
+.map .door{
+  display: inline-block;
+  position: absolute;
+}
+.map .door.facing_S{
+  height: 1em;
+  width: 100%;
+  border-top: 0.16em solid #795231;
+  top:-0.33em;
+  left: 0;
+  background-color: #653E1D;
+}
+.map .door.facing_S .handle{
+  position: absolute;
+  display: inline-block;
+  background-color: gold;
+  right: 0.1em;
+  top: 0.45em;
+  height: 0.1em;
+  width: 0.1em;
+}
+.map .door.facing_S.is-open{
+  width: 0.16em;
+  border-top: 0.5em solid #795231;
+  top:-0.66em;
+}
+.map .door.facing_S.is-open .handle{
+  right: -0.1em;
+  top: 0.05em;
+}
+
+
+/* SCENERY */
+
+.map .scenery.tree{
+  position: absolute;
+  width: 100%;
+  height: 1.5em;
+  top: -.5em;
+  left: 0;
+  display: inline-block;
+}
+.map .scenery.tree:before{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  width: 0.333em;
+  left: 0.333em;
+  height: 0.5em;
+  background-color: #8C6529;
+}
+.map .scenery.tree:after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+}
+.map .scenery.tree.square:after{
+  height: .9em;
+  width: .9em;
+  left: 0.05em;
+  top: 0.1em;
+  background-color: #578216;
+}
+.map .scenery.tree.rectangle:after{
+  height: 1.25em;
+  width: .9em;
+  left: 0.05em;
+  top: 0.05em;
+  background-color: #578216;
+}
+.map .scenery.tree.circle:after{
+  height: 1em;
+  width: 1em;
+  left: 0;
+  top: 0;
+  background-color: #1e932d;
+  border-radius: 100%;
+}
+.map .scenery.tree.triangle:after{
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 1.3em solid #32421c;
+}
+
+/* FLOOR */
+.map .tile.grass{
+  background-color: #060;
+}
+.map .tile.stone{
+  background-color: #444;
+}
+.map .tile.wood{
+  background-color: #8b4513;
+}
+
+/* WALLS */
+
+.map .scenery.stone.wall{
+  position: absolute;
+  display: inline-block;
+  height: 1.5em;
+  width: 100%;
+  background-color: #333;
+  left: 0;
+  bottom: 0;
+}
+.map .scenery.stone.wall.face:before{
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  background-color: #222;
+  left: 0;
+  bottom: 0;
+  height: 66.66%;
+  width: 100%;
+}
+
+/* LADDERS */
+.map .object.ladder{
+  position: absolute;
+  width: 0.8em;
+  height: 1em;
+  border-left: 0.1em solid #a65200;
+  border-right: 0.1em solid #a65200;
+  bottom: 0;
+  left: 0;
+}
+.map .object.ladder:before,
+.map .object.ladder:after{
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 0.8em;
+  height: 0.1em;
+  border-top: 0.1em solid #a65200;
+  border-bottom: 0.1em solid #a65200;
+}
+.map .object.ladder:before{
+  top: 0.1em;
+}
+.map .object.ladder:after{
+  bottom: 0.2em;
+}
+.map .object.hole.ladder,
+.map .object.hole.ladder:before,
+.map .object.hole.ladder:after{
+  border-color: #330C00;
+}

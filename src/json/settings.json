@@ -1,0 +1,34 @@
+{
+	"screen":{
+		"name":"window_size",
+		"text":"Window Size:",
+		"type":"radio",
+		"value":"WINDOW_SIZE_NORMAL",
+		"options":[
+			{
+				"text":"Normal",
+				"value":"WINDOW_SIZE_NORMAL"
+			},
+			{
+				"text":"Full Screen",
+				"value":"WINDOW_SIZE_FS"
+			}
+		]
+	},
+	"input":{
+		"name":"controls",
+		"text":"Controls:",
+		"type":"radio",
+		"value":"CONTROLS_KEYBOARD",
+		"options":[
+			{
+				"text":"On Screen",
+				"value":"CONTROLS_ON_SCREEN"
+			},
+			{
+				"text":"Keyboard",
+				"value":"CONTROLS_KEYBOARD"
+			}
+		]
+	}
+}

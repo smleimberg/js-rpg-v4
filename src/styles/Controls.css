@@ -1,0 +1,168 @@
+/**************
+ ** CONTROLS **
+ **************/
+.menu-open #controls,
+.hide-controls #controls{
+  display: none;
+  pointer-events: none;
+}
+#controls{
+    display: inline-block;
+    pointer-events: all;
+    position: fixed;
+    height: 50vh;
+    width: 100%;
+    bottom: 0;
+    z-index: 3;
+}
+#controls button{
+  font-size: 1rem;
+  color: #eee;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#controls button:focus{
+  outline: none;
+}
+#controls button span{
+  display: none;
+}
+
+/* DIRECTION PAD */
+#controls #dpad{
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    max-width: 40vh;
+    max-height: 40vh;
+    left: 5vw;
+    bottom: 5vh;
+}
+#controls #dpad button{
+    position: absolute;
+    width: 33.33%;
+    height: 33.33%;
+    background-color: #666; /* rgba(255,255,255,0.5); */
+    border: none;
+    cursor: pointer;
+}
+#controls #dpad ._W{
+    top: 33.33%;
+    left: 0;
+}
+#controls #dpad ._N{
+    top: 0;
+    left: 33.33%;
+}
+#controls #dpad ._E{
+    top: 33.33%;
+    right: 0;
+}
+#controls #dpad ._S{
+    left: 33.33%;
+    bottom: 0;
+}
+
+/* A & B BUTTONS */
+#controls #buttons{
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    max-width: 40vh;
+    max-height: 40vh;
+    right: 5vw;
+    bottom: 5vh;
+}
+#controls #buttons button{
+    position: absolute;
+    top:0;
+    width: 33%;
+    height: 33%;
+    background-color: #666; /* rgba(255,255,255,0.5); */
+    border-radius: 100%;
+    display: table;
+    border: none;
+    cursor: pointer;
+}
+#controls #buttons ._A{
+    left:0;
+}
+#controls #buttons ._B{
+    right:0;
+}
+
+/* MENU TOGGLE */
+.MENU_TOGGLE{
+  position: fixed;
+  z-index: 5;
+  transition: all 0.5s ease-in-out;
+  top: 0;
+  right: 0;
+	cursor: pointer;
+	padding: 5px 15px;
+	z-index: 9999;
+	background-color: #666;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.MENU_TOGGLE:focus{
+  outline: none;
+}
+.MENU_TOGGLE #hamburger{
+		display: inline-block;
+		width: 30px;
+}
+.MENU_TOGGLE #hamburger:before,
+.MENU_TOGGLE #hamburger:after{
+  content: " ";
+  transform-origin: 0 1px;
+  -webkit-transform-origin: 0 1px; /* Chrome, Safari, Opera */
+  -ms-transform-origin: 0 1px; /* IE 9 */
+}
+.MENU_TOGGLE #hamburger:before,
+.MENU_TOGGLE #hamburger:after,
+.MENU_TOGGLE #hamburger>span{
+  display: block;
+  border-top: 2px solid #eee;
+  width: 100%;
+  height: 0;
+  margin-top:9px;
+  margin-bottom:9px;
+  transition: all 0.5s ease-in-out;
+}
+.MENU_TOGGLE #hamburger:before{
+  margin-top: 10px;
+}
+.MENU_TOGGLE #hamburger:after{
+  margin-bottom: 7px;
+}
+.menu-open .MENU_TOGGLE #hamburger:before{
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+}
+.menu-open .MENU_TOGGLE #hamburger>span{
+  opacity:0;
+}
+.menu-open .MENU_TOGGLE #hamburger:after{
+  -ms-transform: rotate(-45deg); /* IE 9 */
+  -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+  transform: rotate(-45deg);
+}
+
+@media (min-width: 500px){
+  #controls button{
+    font-size: 2rem;
+  }
+}
